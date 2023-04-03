@@ -1,0 +1,12 @@
+@use "sass:math";
+
+$button_backColor:rgb(23, 107, 203);
+$button_color: #fff;
+$wrapper_backColor: rgb(238, 247, 255);
+$notFound_FontColor:rgb(23, 107, 203);
+$font_color: rgb(23, 107, 203);
+
+@function colWidth($col_num) {
+    $result: 100% * math.div($col_num, 12);
+    @return $result;
+}

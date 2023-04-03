@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+.searchBarWrapper {
+  width: colWidth(12);
+  background-color: $wrapper_backColor;
+  padding: 1.2rem;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .searchInput {
+    width: colWidth(6);
+  }
+}
+
+@media (max-width: 766px) {
+  .searchBarWrapper {
+    border-radius: 0;
+    & .searchInput {
+      width: colWidth(12);
+    }
+  }
+}

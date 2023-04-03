@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.deleteBarWrapper {
+  width: colWidth(12);
+  background-color: $wrapper_backColor;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  border-radius: 0 0 50px 50px;
+
+  & .deleteButton {
+    width: colWidth(6);
+    height: 3.2rem;
+  }
+}
+
+@media (max-width: 766px) {
+    .deleteBarWrapper {
+        border-radius: 0;
+    }
+}

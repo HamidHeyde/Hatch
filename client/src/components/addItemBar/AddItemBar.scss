@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+
+.addItemBarWrapper {
+  width: colWidth(12);
+  background-color: $wrapper_backColor;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  & .addInput {
+    width: colWidth(6);
+  }
+
+  & .addButton {
+    width: colWidth(6);
+    height: 3.2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 766px) {
+  .addItemBarWrapper {
+    & .addInput {
+      width: colWidth(12);
+    }
+
+    & .addButton {
+      width: colWidth(12);
+      height: 3.2rem;
+      margin-top: 1rem;
+    }
+  }
+}

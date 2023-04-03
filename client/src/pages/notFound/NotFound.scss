@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+
+.notFoundWrapper {
+    width: colWidth(12);
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

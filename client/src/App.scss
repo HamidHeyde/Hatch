@@ -1,0 +1,17 @@
+@import "./variables.scss";
+
+.appWrapper {
+  width: colWidth(8);
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  .appWrapper {
+    width: colWidth(10);
+  }
+}
+
+@media (max-width: 766px) {
+  .appWrapper {
+    width: colWidth(12);
+  }
+}

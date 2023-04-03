@@ -1,0 +1,23 @@
+@import "../../../variables.scss";
+
+.itemsWrapper {
+  width: colWidth(5.5);
+  background-color: $wrapper_backColor;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  & .title {
+    color: $font_color;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    border-bottom: $font_color solid 2px;
+  }
+}
+
+@media (max-width: 766px) {
+  .itemsWrapper {
+      width: colWidth(12);
+  }
+}

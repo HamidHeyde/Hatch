@@ -1,0 +1,51 @@
+@import '../../../variables.scss';
+
+.notFouondText {
+    height: 50%;
+    width: colWidth(12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: $wrapper_backColor;
+    border-radius: 0 0 50px 50px;
+
+    & .title {
+        color: $notFound_FontColor;
+        font-size: 4rem;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    & .backButton {
+        background-image: none;
+        letter-spacing: 1px;
+        text-shadow: #000;
+        font-size: 1.25rem;
+        border-style: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 48px auto 0;
+        padding: 17px 81px 19px 79px;
+        text-decoration: none;
+        background-color: $button_backColor;
+        color: $button_color;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 766px) {
+
+    .notFouondText {
+        border-radius: 0;
+
+        & .title {
+            font-size: 2.5rem;
+        }
+
+        & .backButton {
+            font-size: 1rem;
+        }
+    }
+}
