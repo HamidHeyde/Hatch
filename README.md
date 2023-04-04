@@ -9,6 +9,7 @@
 <li>Database is a mongodb instance already hosted on the cloud. no need to set anything up.</li>
 </ul>
 </div>
+
 ##### The Application
 ```
 git clone THE_REPOSITORY
