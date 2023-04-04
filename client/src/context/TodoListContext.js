@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import axios from 'axios';
 
 // Todo List Context
 export const TodoListContext = createContext([]);
@@ -13,18 +14,15 @@ export const TodoListProvider = ({ children }) => {
   }, [todoList]);
 
   useEffect(() => {
-    const data = [
-      { text: "This is the 1st todo list", checked: false },
-      { text: "This is the 2nd todo list", checked: true },
-      { text: "This is the 3rd todo list", checked: false },
-      { text: "This is the 4tg todo list", checked: true },
-      { text: "This is the 5th todo list", checked: false },
-      { text: "This is the 6th todo list", checked: true },
-      { text: "This is the 7th todo list", checked: true },
-    ];
+    const fetchData = async () => {
+      const data = await axios.get('http://localhost:8000/todos');
+      return data;
+    }
 
-    SetTodoList([...data]);
-    SetSearchRes([...data]);
+    fetchData()
+      .then((res)=> SetTodoList([...res.data]))
+      .catch((err)=> console.log(err.message))
+
   }, []);
 
   return (

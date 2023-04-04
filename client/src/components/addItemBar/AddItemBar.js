@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./AddItemBar.scss";
 import { useTodoList } from "../../hooks/useTodoList";
+import axios from "axios";
 
 export function AddItemBar() {
   const [itemToAdd, SetItemToAdd] = useState("");
@@ -10,11 +11,17 @@ export function AddItemBar() {
 
   const handleOnChange = (e) => SetItemToAdd(e.target.value);
   const handleKeyDown = (e) => e.key === "Enter" && handleAddItem();
-  const handleAddItem = () => {
+  const handleAddItem = async () => {
     const newItem = { text: itemToAdd, done: false };
 
-    SetTodoList((prev) => [...prev, { ...newItem }]);
-    SetItemToAdd("");
+    const res = await axios.post('http://localhost:8000/todos',{
+      data: {...newItem}
+    });
+
+    if (res.status === 200){
+      SetTodoList((prev) => [...prev, { ...newItem, _id: res.data._id }]);
+      SetItemToAdd("");
+    }
   };
 
   return (

@@ -12,7 +12,7 @@ export function ItemsDisplay() {
       <ItemsList
         data={{
           title: "ToDo",
-          list: searchRes.filter((item) => !item.checked),
+          list: searchRes.filter((item) => !item.checked).sort((a,b)=> a.text.localeCompare(b.text)),
         }}
       />
 
@@ -20,7 +20,7 @@ export function ItemsDisplay() {
       <ItemsList
         data={{
           title: "DONE",
-          list: searchRes.filter((item) => item.checked),
+          list: searchRes.filter((item) => item.checked).sort((a,b)=> a.text.localeCompare(b.text)),
         }}
       />
     </div>
